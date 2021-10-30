@@ -1,0 +1,81 @@
+#define NAME "Siege (USA, 1969)"
+onLoadName = NAME;
+briefingName = NAME;
+
+#include "Siege_Core\includes\description.hpp"
+#include "Siege_Core\includes\loadouts\usmc_1968\USMC_1968.hpp"
+
+class TWC_Siege {
+	//Bases
+	playerSide = 1;
+	spawnDistance = 500;
+	bluforSupply = 50;
+	bases[] = {
+		"mai_loc",
+		"berchtesgaden",
+		"kon_tum",
+		"quan_loi",
+		"leghorn",
+		"a_luoi",
+		"comms_hill"
+	};
+	
+	//OPFOR
+	enemySide = 0;
+	opfor_section[] = {
+		"vn_o_men_nva_65_01",
+		"vn_o_men_nva_65_02",
+		"vn_o_men_nva_65_03",
+		"vn_o_men_nva_65_04",
+		"vn_o_men_nva_65_05",
+		"vn_o_men_nva_65_06",
+		"vn_o_men_nva_65_07",
+		"vn_o_men_nva_65_08",
+		"vn_o_men_nva_65_09",
+		"vn_o_men_nva_65_10",
+		"vn_o_men_nva_65_11",
+		"vn_o_men_nva_65_12"
+	};
+	opfor_sectionAT[] = {
+		"vn_o_men_nva_65_01",
+		"vn_o_men_nva_65_14",
+		"vn_o_men_nva_65_14",
+		"vn_o_men_nva_65_06"
+	};
+	opfor_sectionAA[] = {
+		"vn_o_men_nva_65_01",
+		"vn_o_men_nva_65_11",
+		"vn_o_men_nva_65_11",
+		"vn_o_men_nva_65_06"
+	};
+	opfor_sectionMG[] = {
+		"vn_o_men_nva_65_01",
+		"vn_o_men_nva_65_11",
+		"vn_o_men_nva_65_11",
+		"vn_o_men_nva_65_02",
+		"vn_o_men_nva_65_02"
+	};
+	opfor_sniper[] = {
+		"vn_o_men_nva_65_10",
+		"vn_o_men_nva_65_10"
+	};
+	opfor_technicals[] = {
+		"vn_o_wheeled_z157_mg_02_nva65",
+		"vn_o_wheeled_z157_mg_01_nva65",
+		"vn_o_wheeled_btr40_mg_03_nva65",
+		"vn_o_wheeled_btr40_mg_01_nva65",
+		"vn_o_wheeled_btr40_mg_02_nva65"
+	};
+	opfor_trucks[] = {
+		"vn_o_wheeled_z157_01_nva65",
+		"vn_o_wheeled_z157_02_nva65"
+	};
+	opfor_apcs[] = {
+		"vn_o_wheeled_btr40_01_nva65",
+		"vn_o_wheeled_btr40_mg_01_nva65",
+		"vn_o_wheeled_btr40_mg_02_nva65"
+	};
+	opfor_tanks[] = {
+		"vn_o_armor_type63_01_nva65"
+	};
+};

@@ -1,0 +1,261 @@
+/*%FSM<COMPILE "F:\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, commanderLoop">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,-65.442535,-551.686707,24.557465,-501.686707,0.000000,"START"};
+item1[] = {"Artillery_",4,218,-223.670319,-244.373215,-133.670319,-194.373215,2.000000,"Artillery?"};
+item2[] = {"Infiltration_",4,218,-119.193703,-244.373215,-29.193695,-194.373215,1.000000,"Infiltration?"};
+item3[] = {"Assault_",4,218,-16.988281,-244.373215,73.011719,-194.373215,0.000000,"Assault?"};
+item4[] = {"Armour_",4,218,85.217163,-244.373169,175.217163,-194.373230,3.000000,"Armour?"};
+item5[] = {"Artillery",2,250,-224.427368,-145.196167,-134.427368,-95.196167,0.000000,"Artillery"};
+item6[] = {"Infiltration",2,250,-118.436653,-145.953186,-28.436630,-95.953186,0.000000,"Infiltration"};
+item7[] = {"Assault",2,250,-17.745300,-145.196136,72.254715,-95.196136,0.000000,"Assault"};
+item8[] = {"Armour",2,250,82.945984,-147.467377,172.945984,-97.467377,0.000000,"Armour"};
+item9[] = {"TRUE",8,218,83.703003,-71.002563,173.703003,-21.002563,0.000000,"TRUE"};
+item10[] = {"TRUE",8,218,-16.231209,-69.488403,73.768799,-19.488403,0.000000,"TRUE"};
+item11[] = {"TRUE",8,218,-117.679543,-71.002563,-27.679535,-21.002563,0.000000,"TRUE"};
+item12[] = {"TRUE",8,218,-224.427399,-73.273804,-134.427399,-23.273804,0.000000,"TRUE"};
+item13[] = {"Direction",2,250,-65.324951,-367.628235,24.675064,-317.628204,0.000000,"Direction"};
+item14[] = {"",7,210,-76.482208,11.109985,-68.482269,19.109970,0.000000,""};
+item15[] = {"Take_Action_",4,218,-363.600525,-223.627258,-273.600525,-173.627228,0.000000,"Take Action?"};
+item16[] = {"",7,210,-187.288483,10.102631,-179.288544,18.102615,0.000000,""};
+item17[] = {"",7,210,23.243401,11.109985,31.243416,19.109993,0.000000,""};
+item18[] = {"",7,210,122.969116,12.117371,130.969116,20.117371,0.000000,""};
+item19[] = {"",7,210,-324.285339,8.088013,-316.285339,16.087997,0.000000,""};
+item20[] = {"",7,210,-323.278015,-344.477448,-315.278015,-336.477448,0.000000,""};
+item21[] = {"TRUE",8,218,-65.101196,-468.225098,24.898804,-418.225098,0.000000,"TRUE"};
+item22[] = {"Blank_intermediate",2,250,-364.607849,-104.761627,-274.607849,-54.761627,0.000000,"Blank" \n "intermediate" \n "stage"};
+link0[] = {0,21};
+link1[] = {1,5};
+link2[] = {2,6};
+link3[] = {3,7};
+link4[] = {4,8};
+link5[] = {5,12};
+link6[] = {6,11};
+link7[] = {7,10};
+link8[] = {8,9};
+link9[] = {9,18};
+link10[] = {10,17};
+link11[] = {11,14};
+link12[] = {12,16};
+link13[] = {13,1};
+link14[] = {13,2};
+link15[] = {13,3};
+link16[] = {13,4};
+link17[] = {14,16};
+link18[] = {15,20};
+link19[] = {16,19};
+link20[] = {17,14};
+link21[] = {18,17};
+link22[] = {19,22};
+link23[] = {20,13};
+link24[] = {21,13};
+link25[] = {22,15};
+globals[] = {0.000000,0,0,0,0,640,480,1,35,6316128,1,-708.913208,563.948669,119.671387,-681.760193,1404,884,1};
+window[] = {2,-1,-1,-1,-1,811,52,1492,52,3,1422};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "commanderLoop";
+        class States
+        {
+                /*%FSM<STATE "START">*/
+                class START
+                {
+                        name = "START";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_basePos = TWC_Siege_basePos;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 21;
+                                        priority = 0.000000;
+                                        to="Direction";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Artillery">*/
+                class Artillery
+                {
+                        name = "Artillery";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"call TWC_Siege_OPFOR_fnc_doArtillery;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 12;
+                                        priority = 0.000000;
+                                        to="Blank_intermediate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Infiltration">*/
+                class Infiltration
+                {
+                        name = "Infiltration";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"[_spawnPos] call TWC_Siege_OPFOR_fnc_doInfiltration;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Blank_intermediate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Assault">*/
+                class Assault
+                {
+                        name = "Assault";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"[_spawnPos] call TWC_Siege_OPFOR_fnc_doAssault;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="Blank_intermediate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Armour">*/
+                class Armour
+                {
+                        name = "Armour";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"[_spawnPos] call TWC_Siege_OPFOR_fnc_doArmour;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="Blank_intermediate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Direction">*/
+                class Direction
+                {
+                        name = "Direction";
+                        itemno = 13;
+                        init = /*%FSM<STATEINIT""">*/"_spawnPos = [_basePos] call TWC_Siege_OPFOR_fnc_direction;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Armour_">*/
+                                class Armour_
+                                {
+                                        itemno = 4;
+                                        priority = 3.000000;
+                                        to="Armour";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_spawnPos] call TWC_Siege_OPFOR_fnc_getArmour;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Artillery_">*/
+                                class Artillery_
+                                {
+                                        itemno = 1;
+                                        priority = 2.000000;
+                                        to="Artillery";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"call TWC_Siege_OPFOR_fnc_getArtillery;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Infiltration_">*/
+                                class Infiltration_
+                                {
+                                        itemno = 2;
+                                        priority = 1.000000;
+                                        to="Infiltration";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_spawnPos] call TWC_Siege_OPFOR_fnc_getInfiltration;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Assault_">*/
+                                class Assault_
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Assault";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_spawnPos] call TWC_Siege_OPFOR_fnc_getAssault;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Blank_intermediate">*/
+                class Blank_intermediate
+                {
+                        name = "Blank_intermediate";
+                        itemno = 22;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Take_Action_">*/
+                                class Take_Action_
+                                {
+                                        itemno = 15;
+                                        priority = 0.000000;
+                                        to="Direction";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_basePos] call TWC_Siege_OPFOR_fnc_takeAction;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="START";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/
