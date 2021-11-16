@@ -10,8 +10,6 @@ for /d %%i in (*) do (
 		IF /I "%%i" == "tools" (
 			echo Skipping Tools...
 		) else (
-			echo Updating onLoadMission for %%i
-			echo onLoadName = "Siege Redux - %DATE:/=-%"; > %%i\onLoadMission.hpp
 			makePbo -NPM %%i
 			echo makePboing %%i
 		)

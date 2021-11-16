@@ -1,0 +1,67 @@
+#define NAME "Siege (British, 2009)"
+onLoadName = NAME;
+briefingName = NAME;
+
+#include "Siege_Core\includes\description.hpp"
+#include "Siege_Core\includes\loadouts\british_2009\British_2009.hpp"
+
+class TWC_Siege {
+	//Bases
+	playerSide = 1;
+	spawnDistance = 200;
+	bluforSupply = 50;
+	bases[] = {
+		"centre"
+	};
+	
+	//OPFOR
+	enemySide = 0;
+	opfor_section[] = {
+		"CUP_O_TK_INS_Soldier_TL",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_GL",
+		"CUP_O_TK_INS_Soldier_AT",
+		"CUP_O_TK_INS_Soldier",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_AR",
+		"CUP_O_TK_INS_Sniper",
+		"CUP_O_TK_INS_Soldier_Enfield",
+		"CUP_O_TK_INS_Soldier_FNFAL"
+	};
+	opfor_sectionAT[] = {
+		"CUP_O_TK_INS_Soldier_TL",
+		"CUP_O_TK_INS_Soldier_AT",
+		"CUP_O_TK_INS_Soldier_AT",
+		"CUP_O_TK_INS_Soldier"
+	};
+	opfor_sectionAA[] = {
+		"CUP_O_TK_INS_Soldier_AA",
+		"CUP_O_TK_INS_Soldier_AA",
+		"CUP_O_TK_INS_Soldier_AA"
+	};
+	opfor_sectionMG[] = {
+		"CUP_O_TK_INS_Soldier_GL",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_Enfield",
+		"CUP_O_TK_INS_Soldier_FNFAL"
+	};
+	opfor_sniper[] = {
+		"CUP_O_TK_INS_Sniper",
+		"CUP_O_TK_INS_Sniper"
+	};
+	opfor_technicals[] = {
+		"CUP_O_Hilux_DSHKM_TK_INS",
+		"CUP_O_Hilux_M2_TK_INS",
+		"CUP_O_Hilux_SPG9_TK_INS",
+		"CUP_O_Hilux_zu23_TK_INS",
+		"CUP_O_LR_SPG9_TKM",
+		"CUP_O_LR_MG_TKM"
+	};
+	opfor_trucks[] = {
+		"CUP_O_V3S_Open_TKM",
+		"CUP_O_V3S_Covered_TKM"
+	};
+	opfor_apcs[] = {};
+	opfor_tanks[] = {};
+};

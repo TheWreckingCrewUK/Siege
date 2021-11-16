@@ -15,7 +15,7 @@ class Header {
 
 respawn = "BASE";
 respawnDelay = 60;
-respawnTemplates[] = {"ace_spectator", "Wave", "Counter", "MenuInventory"};
+respawnTemplates[] = {"Wave", "Counter", "MenuPosition", "MenuInventory"};
 respawnDialog = true;
 respawnOnStart = 1;
 

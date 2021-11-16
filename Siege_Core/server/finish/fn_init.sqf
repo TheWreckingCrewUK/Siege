@@ -1,3 +1,5 @@
+#include "..\..\includes\script_component.hpp"
+
 TWC_Siege_Finish_score = 0;
 
 //Modify the score when we kill people.
